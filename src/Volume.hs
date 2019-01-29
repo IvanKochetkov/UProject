@@ -24,7 +24,7 @@ volume = do
                         
 volumeParallelepiped :: IO()
 volumeParallelepiped = do
-    putStrLn $  "Введите длины сторон параллелепипеда(попарно перпендикулярные). \n" ++
+    putStrLn $  "Введите длины сторон параллелепипеда. \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     bb <- getLine

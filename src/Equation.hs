@@ -4,7 +4,7 @@ module Equation(
     
 eq :: IO()
 eq = do
-    putStrLn $ concat[  "Ищем действительные корни квадратного уравнения вида: \n",
+    putStrLn $ concat[  "Решаем квадратное уравнение вида: \n",
                         "   ax^2 + bx + c = 0 \n",
                         "где \n",
                         "   x - неизвестное, \n",
@@ -21,13 +21,29 @@ eq = do
         cc <- getLine
         let b = read bb
             c = read cc
-            discr = b*b - 4*a*c
-        if discr < 0 then
-            putStrLn "Решений нет."
-        else do
-            let x1 = (-b - sqrt discr)/(2*a)
-                x2 = (-b + sqrt discr)/(2*a)
-            if x1 == x2 then putStrLn $ "У этого уравнения повторяющийся корень x = " ++ show x1
-            else putStrLn $ "Корни уравнения: \n" ++
-                            "x1 = " ++ show x1 ++ "\n" ++
-                            "x2 = " ++ show x2 ++ "\n"
+        root a b c
+        
+root :: Double -> Double-> Double -> IO ()
+root a b c 
+    |d >  0 = twoRoots a b d
+    |d == 0 = oneRoots a b
+    |d <  0 = unRoots 
+    where d = b*b-4*a*c
+          
+twoRoots :: Double-> Double-> Double -> IO ()
+twoRoots a b d = do 
+    putStrLn .unlines $[
+        "Корни уравнения:",
+        "x1=" ++ show x1,
+        "x2=" ++ show x2
+        ]
+    where
+        x1 =(-b+ sqrt d)/(2*a)
+        x2 =(-b- sqrt d)/(2*a)
+        
+oneRoots :: Double -> Double -> IO ()
+oneRoots a b = do 
+    putStrLn $ "У этого уравнения повторяющийся корень x=" ++ show (-b/(2*a))
+    
+unRoots :: IO ()
+unRoots = putStrLn "Решений нет"
