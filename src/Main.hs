@@ -29,21 +29,24 @@ calculating = do
     y <- getLine
     let n = read $ take 1 y
     case n of
-         1 -> do nodnok
+         1 -> nodnok
          2 -> area
          3 -> volume
          4 -> eq
-         _ -> putStrLn "ОШИБКА: неверно указан номер действия"
+         _ -> putStrLn "ОШИБКА: неверно указан номер действия."
 
+         
 usage :: IO()
 usage = putStrLn usageStr
 
 usageStr :: String
-usageStr =  ""  
+usageStr =  concat[ "Использование:\n"                                                  ,
+                    "   Введите любую строку, кроме \"--help\" и \"--version\", \n"     ,
+                    "      или не вводите ничего и калькулятор запустится.\n"           ]
 
 
 version :: IO()
 version = putStrLn versionStr
 
 versionStr :: String
-versionStr =    ""
+versionStr =    "Math Calc, version 1.1."
