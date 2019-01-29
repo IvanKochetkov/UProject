@@ -19,16 +19,19 @@ nodnok = do
                 "НОК чисел " ++ aa ++ " и " ++ bb ++ " равен " ++ show noKab 
 
 
-nod :: Int -> Int -> IO Int
+nod :: Int -> Int -> IO Int 
 nod a b = do
-    if (a `mod` b == 0) then 
-        return b
+    if b == 0 then
+        return a
     else do
-        let c = a `mod` b
-        if c `mod` b == 1 then
-            return 1
+        if (a `mod` b == 0) then 
+            return b
         else do
-            nod b $ c `mod` b
+            let c = a `mod` b
+            if c `mod` b == 1 then
+                return 1
+            else do
+                nod b $ c `mod` b
             
             
 nok :: Int -> Int -> Int -> IO Int

@@ -30,7 +30,7 @@ area = do
                         
 areaRectangle :: IO()
 areaRectangle = do
-    putStrLn $  "Введите две стороны прямоугольника(перпендикулярные). \n" ++
+    putStrLn $  "Введите длины сторон прямоугольника(перпендикулярные). \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     bb <- getLine
@@ -42,7 +42,7 @@ areaRectangle = do
     
 areaParallelogram :: IO()
 areaParallelogram = do
-    putStrLn $  "Введите сторону, затем высоту, проведенную к ней. \n" ++
+    putStrLn $  "Введите длину стороны и длину опущенной на нее высоты \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     hh <- getLine
@@ -63,7 +63,7 @@ areaCircle = do
     
 areaTriangle :: IO()
 areaTriangle = do
-    putStrLn $  "Введите сторону, затем высоту, проведенную к ней. \n" ++
+    putStrLn $  "Введите длину стороны и длину опущенной на нее высоты \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     hh <- getLine
@@ -75,7 +75,7 @@ areaTriangle = do
     
 areaTrapezium :: IO()
 areaTrapezium = do
-    putStrLn $  "Введите основания трапеции, затем высоту. \n" ++
+    putStrLn $  "Введите длины оснований трапеции, затем длину высоты. \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     bb <- getLine
@@ -89,7 +89,7 @@ areaTrapezium = do
     
 areaRhombus :: IO()
 areaRhombus = do
-    putStrLn $  "Введите сторону ромба, затем высоту, проведенную к ней. \n" ++
+    putStrLn $  "Введите длину стороны ромба и длину опущенной на нее высоты \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     hh <- getLine

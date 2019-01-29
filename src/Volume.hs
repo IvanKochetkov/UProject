@@ -24,7 +24,7 @@ volume = do
                         
 volumeParallelepiped :: IO()
 volumeParallelepiped = do
-    putStrLn $  "Введите три стороны параллелепипеда(попарно перпендикулярные). \n" ++
+    putStrLn $  "Введите длины сторон параллелепипеда(попарно перпендикулярные). \n" ++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     bb <- getLine
@@ -38,7 +38,7 @@ volumeParallelepiped = do
     
 volumeCylinder :: IO()
 volumeCylinder = do
-    putStrLn $  "Введите радиус основания, затем высоту.\n"++
+    putStrLn $  "Введите радиус основания, затем длину высоты.\n"++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     hh <- getLine
@@ -50,7 +50,7 @@ volumeCylinder = do
     
 volumeCone :: IO()
 volumeCone = do
-    putStrLn $  "Введите радиус основания, затем высоту.\n"++
+    putStrLn $  "Введите радиус основания, затем длину высоты.\n"++
                 "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"
     aa <- getLine
     hh <- getLine
