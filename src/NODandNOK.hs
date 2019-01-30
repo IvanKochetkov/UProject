@@ -6,8 +6,8 @@ module NODandNOK(
 
 nodnok :: IO ()
 nodnok = do 
-    putStrLn $  concat[ "Введите 2 числа, для которых нужно посчитать наибольший общий делитель\n",
-                        "и наименьшее общее кратное.\n",
+    putStrLn $  concat[ "Введите 2 числа, для которых нужно посчитать НОД\n",
+                        "и НОК.\n",
                         "ВНИМАНИЕ! Числа нужно вводить каждое на новой строке!"]
     aa <- getLine
     let a = read aa
@@ -15,8 +15,8 @@ nodnok = do
     let b = read bb
     noDab  <- nod a b
     noKab <- nok a b noDab
-    putStrLn $  "НОД чисел " ++ aa ++ " и " ++ bb ++ " равен " ++ show noDab ++ "\n"++
-                "НОК чисел " ++ aa ++ " и " ++ bb ++ " равен " ++ show noKab 
+    putStrLn $  "НОД (" ++ aa ++ "," ++ bb ++ ")=" ++ show noDab ++ "\n"++
+                "НОК [" ++ aa ++ "," ++ bb ++ "]=" ++ show noKab 
 
 
 nod :: Int -> Int -> IO Int 
